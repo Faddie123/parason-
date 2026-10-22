@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your Parason account.">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign Up | Parason</title>
+</head>
+<body>
+    <div class="contact-page-shell signup-page-shell">
+        <header class="site-header">
+            <nav class="navigation" aria-label="Main navigation">
+                <a class="logo" href="index.html">Parason</a>
+                <div class="navigation-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#feature">Feature</a>
+                    <a href="index.html#price">Price</a>
+                    <a href="index.html#pages">Pages</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <a class="button button-signup" href="signup.html" aria-current="page">Sign Up</a>
+            </nav>
+        </header>
+        <section class="contact-title signup-title" aria-labelledby="signup-title">
+            <div>
+                <h1 id="signup-title">Join Parason</h1>
+                <p><a href="index.html">Home</a><span aria-hidden="true"> / </span>Sign Up</p>
+            </div>
+        </section>
+        <main class="signup-content">
+            <section class="signup-card" aria-labelledby="signup-form-title">
+                <div class="signup-card-heading">
+                    <span class="signup-mark" aria-hidden="true">P</span>
+                    <p class="signup-eyebrow">GET STARTED FOR FREE</p>
+                    <h2 id="signup-form-title">Create your account</h2>
+                    <p>Sign up today and make your work simpler with Parason.</p>
+                </div>
+                <form class="signup-form">
+                    <div class="signup-fields">
+                        <div class="signup-field">
+                            <label for="signup-name">Full name</label>
+                            <input id="signup-name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
+                        </div>
+                        <div class="signup-field">
+                            <label for="signup-email">Email address</label>
+                            <input id="signup-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+                        </div>
+                        <div class="signup-field">
+                            <label for="signup-password">Password</label>
+                            <input id="signup-password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
+                        </div>
+                        <div class="signup-field">
+                            <label for="signup-confirm-password">Confirm password</label>
+                            <input id="signup-confirm-password" name="confirm-password" type="password" placeholder="Enter your password again" autocomplete="new-password" minlength="8" required>
+                        </div>
+                    </div>
+                    <label class="signup-terms">
+                        <input name="terms" type="checkbox" required>
+                        <span>I agree to the <a href="index.html#terms">Terms of Service</a> and <a href="index.html#privacy">Privacy Policy</a>.</span>
+                    </label>
+                    <button class="button signup-submit" type="button">Create Account</button>
+                </form>
+                <p class="signup-note">Account registration will be available once a signup service is connected.</p>
+                <p class="signup-login">Already have an account? <a href="contact.html">Contact our team</a></p>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h2>Top Products</h2>
+                    <ul>
+                        <li><a href="index.html#products">Managed Website</a></li>
+                        <li><a href="index.html#products">Manage Reputation</a></li>
+                        <li><a href="index.html#products">Power Tools</a></li>
+                        <li><a href="index.html#products">Marketing Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="index.html#jobs">Jobs</a></li>
+                        <li><a href="index.html#brand-assets">Brand Assets</a></li>
+                        <li><a href="index.html#investor-relations">Investor Relations</a></li>
+                        <li><a href="index.html#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Features</h2>
+                    <ul>
+                        <li><a href="index.html#feature">Jobs</a></li>
+                        <li><a href="index.html#feature">Brand Assets</a></li>
+                        <li><a href="index.html#feature">Investor Relations</a></li>
+                        <li><a href="index.html#feature">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h2>Resources</h2>
+                    <ul>
+                        <li><a href="index.html#resources">Guides</a></li>
+                        <li><a href="index.html#resources">Research</a></li>
+                        <li><a href="index.html#resources">Experts</a></li>
+                        <li><a href="index.html#resources">Agencies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h2>Newsletter</h2>
+                    <p>You can trust us. We only send promo offers.</p>
+                    <form class="newsletter-form" action="#" method="get">
+                        <label class="visually-hidden" for="newsletter-email">Your email address</label>
+                        <input id="newsletter-email" name="newsletter-email" type="email" placeholder="Your Email Address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2026 All rights reserved | This template is made with <span aria-label="love">&#9829;</span> by <a href="#colorlib">Colorlib</a></p>
+                <nav class="social-links" aria-label="Social media">
+                    <a href="#facebook" aria-label="Facebook">f</a>
+                    <a href="#twitter" aria-label="Twitter">♥</a>
+                    <a href="#dribbble" aria-label="Dribbble">◉</a>
+                    <a href="#behance" aria-label="Behance">Be</a>
+                </nav>
+            </div>
+        </footer>
+        <script>
+            const siteHeader = document.querySelector(".site-header");
+
+            function updateHeaderOnScroll() {
+                siteHeader.classList.toggle("is-scrolled", window.scrollY > 20);
+            }
+
+            window.addEventListener("scroll", updateHeaderOnScroll, { passive: true });
+            updateHeaderOnScroll();
+        </script>
+    </div>
+</body>
+</html>
