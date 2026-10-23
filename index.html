@@ -270,6 +270,32 @@
     </footer>
     <script>
         const siteHeader = document.querySelector(".site-header");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if ("IntersectionObserver" in window && !reduceMotion) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
+
+            const revealElements = document.querySelectorAll(
+                ".features, .digital-showcase, .offered-features, .connection-solutions, .pricing, .testimonials, .feature-card, .offered-card, .pricing-card, .footer-content > *, .footer-bottom"
+            );
+            let cardIndex = 0;
+
+            revealElements.forEach((element) => {
+                element.classList.add("scroll-reveal");
+                if (element.matches(".feature-card, .offered-card, .pricing-card")) {
+                    element.style.setProperty("--reveal-delay", `${(cardIndex % 3) * 90}ms`);
+                    cardIndex += 1;
+                }
+                revealObserver.observe(element);
+            });
+        }
 
         function updateHeaderOnScroll() {
             siteHeader.classList.toggle("is-scrolled", window.scrollY > 20);
