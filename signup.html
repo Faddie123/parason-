@@ -8,6 +8,11 @@
     <title>Sign Up | Parason</title>
 </head>
 <body>
+    <div class="page-loader" role="status" aria-live="polite">
+        <span class="loader-mark" aria-hidden="true">Parason</span>
+        <span class="loader-spinner" aria-hidden="true"></span>
+        <span class="loader-label">Loading</span>
+    </div>
     <div class="contact-page-shell signup-page-shell">
         <header class="site-header">
             <nav class="navigation" aria-label="Main navigation">
@@ -124,6 +129,19 @@
             </div>
         </footer>
         <script>
+            const pageLoader = document.querySelector(".page-loader");
+
+            function hidePageLoader() {
+                pageLoader.classList.add("is-hidden");
+                window.setTimeout(() => pageLoader.remove(), 400);
+            }
+
+            if (document.readyState === "complete") {
+                window.setTimeout(hidePageLoader, 350);
+            } else {
+                window.addEventListener("load", () => window.setTimeout(hidePageLoader, 350), { once: true });
+            }
+
             const siteHeader = document.querySelector(".site-header");
             const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

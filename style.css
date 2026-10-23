@@ -15,6 +15,58 @@ body {
     background: #fff;
 }
 
+.page-loader {
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 18px;
+    background: #21175b;
+    color: #fff;
+    opacity: 1;
+    transition: opacity 350ms ease, visibility 350ms ease;
+    visibility: visible;
+}
+
+.page-loader.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.loader-mark {
+    color: #fff;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.loader-spinner {
+    width: 42px;
+    height: 42px;
+    border: 3px solid rgb(255 255 255 / 25%);
+    border-top-color: #02f5f7;
+    border-radius: 50%;
+    animation: loader-spin 800ms linear infinite;
+}
+
+.loader-label {
+    color: rgb(255 255 255 / 75%);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@keyframes loader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 h1,
 h2,
 h3 {
@@ -1431,5 +1483,9 @@ a {
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
+    }
+
+    .loader-spinner {
+        animation: none;
     }
 }

@@ -7,6 +7,11 @@
     <title>Parason - Advanced Software Made Simple</title>
 </head>
 <body>
+    <div class="page-loader" role="status" aria-live="polite">
+        <span class="loader-mark" aria-hidden="true">Parason</span>
+        <span class="loader-spinner" aria-hidden="true"></span>
+        <span class="loader-label">Loading</span>
+    </div>
     <div class="hero-shell">
         <header class="site-header">
             <nav class="navigation" aria-label="Main navigation">
@@ -23,7 +28,7 @@
         </header>
         <main id="home" class="hero">
             <div class="hero-art">
-                <img src="images/hero-art.png" alt="Connected laptops surrounding a glowing computer chip">
+                <img src="/images/Neon_Isometric_Computing_Hub-removebg-preview.png" alt="Connected laptops surrounding a glowing computer chip">
             </div>
             <section class="hero-copy" aria-labelledby="hero-title">
                 <h1 id="hero-title">Advanced software<br>made simple</h1>
@@ -71,7 +76,7 @@
                 <a class="button button-outline" href="#feature">Know More</a>
             </div>
             <div class="showcase-art">
-                <img src="images/laptop.png" alt="Laptop displaying an analytics dashboard">
+                <img src="images/DashVista%20Analytics%20Dashboard%20(1)%20-%20transparent.png" alt="Laptop displaying an analytics dashboard">
             </div>
         </div>
     </section>
@@ -118,14 +123,14 @@
                 </article>
             </div>
             <div class="offered-art">
-                <img src="images/feature%20image.png" alt="Professional presenting a project dashboard on a large screen">
+                <img src="images/feature-transparent.png" alt="Professional presenting a project dashboard on a large screen">
             </div>
         </div>
     </section>
     <section class="connection-solutions" aria-labelledby="solutions-title">
         <div class="solutions-content">
             <div class="solutions-art">
-                <img src="images/pie.png" alt="Analytics dashboard with bar and pie charts">
+                <img src="images/piechart-transparent.png" alt="Analytics dashboard with bar and pie charts">
             </div>
             <div class="solutions-copy">
                 <h2 id="solutions-title">Simple Solutions for Complex<br>Connections</h2>
@@ -269,6 +274,19 @@
         </div>
     </footer>
     <script>
+        const pageLoader = document.querySelector(".page-loader");
+
+        function hidePageLoader() {
+            pageLoader.classList.add("is-hidden");
+            window.setTimeout(() => pageLoader.remove(), 400);
+        }
+
+        if (document.readyState === "complete") {
+            window.setTimeout(hidePageLoader, 350);
+        } else {
+            window.addEventListener("load", () => window.setTimeout(hidePageLoader, 350), { once: true });
+        }
+
         const siteHeader = document.querySelector(".site-header");
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
